@@ -1,240 +1,36 @@
 {
- "updated": "2026-11-21 10:49 IST",
+ "updated": "2026-11-21 17:41 IST",
  "date": "2026-11-21",
  "stocks": [
   {
-   "symbol": "GRASIM",
-   "name": "Grasim",
-   "score": 80,
+   "symbol": "BHEL",
+   "name": "BHEL",
+   "score": 70,
    "news": [
     {
-     "title": "Sigachi Industries seeks approval for two director appointments - scanx.trade",
-     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVGZwY3VzQkFBMEZneERnREpYUjhIUUY0ZU80UFY0RWJ2WHp6Q25XeW9RQVdod05ZdEZhbU9OTU03OGlva1RyWDNLQ284VGtzUkNSWTkzdFZibGlCdHlZSVBuTGwtVXlobG1YYkxRZnREU0pwSmRfd3pUTy0wc0JxZVU2VnNTRXhQbXJyeU4zZTFBbW1CeGIxR1hCTFV5VE9QVzhxOFV2Z2R0UDgxN2ZZQTNLNVBWbDA?oc=5",
-     "source": "scanx.trade",
-     "date": "Fri, 20 Nov 2026 12:54:37 GMT"
-    },
-    {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    },
-    {
-     "title": "Closing Bell: D-St shrugs off weak global cues; Nifty at 25,800, Sensex gains 898 pts - IndiaIPO",
-     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRU9EYnJzYURkVW1Cb3lzcTZic0RLZzMxbEpGQ19YNFhXdXZHYXJNb2pvTTQzQU5QTXA0Snd2d1NVNVhvX0g3dmREQlRVVjB2NHVfNl9rUGxFdjI5UW1hWFVMakdVbC1ZQmt5RDJxN2Rhd1A3MkkyQ2dHaWpLQUdrb0pmMGU4T0xpUWdXVVhIbjBYdzRVMVhFN29hOEtuRjh5RlNvWXRpV0Z1Q1B5SkpsU0hhZVc4ak1N?oc=5",
-     "source": "IndiaIPO",
-     "date": "Fri, 20 Nov 2026 20:41:49 GMT"
+     "title": "BHEL Q2 Results: Profit Up 120%, Record High, Share Trend - Univest",
+     "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNRUdJQi0tcUtzbmNFWjBHa3g1bG03RWdsenU5QWlGa3NWay0tdHpvdEF4QnFEYWVmYnZxU09pdWRGaEZWUHpCcVBXZ0xIcVdMS0FqeXBicHhwQ0liQmdKWVd1YUViMFpRZjJYZDVTcXdhMjRVUWdmM2JNRE1qdWlFOGRMcVk0N2hlSVYwQWJGUUpiQi1xeXJ2bEYxTGU3UnZRM1FETVVNYmszbVduR3J4NHNGNnU4T0RCeGoteUEycEcxRFFabTQtTjd3MHd1cWU4d0F2dVk0dXdoUFlGZEVScERBT3FpSUVXZkE?oc=5",
+     "source": "Univest",
+     "date": "Sat, 21 Nov 2026 02:44:27 GMT"
     }
    ]
   },
   {
    "symbol": "EICHERMOT",
    "name": "Eicher Motors",
-   "score": 70,
+   "score": 60,
    "news": [
     {
-     "title": "Tata Technologies shares extend gains; will the bounce sustain or is upside limited? - Business Today",
-     "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQRFZMWlgtTjNjWU9VZzNVMFNGcFZhTmhHaElyMnlGaVNRMnc5d0drUUFFQmk5YkltejJPeXNPNVdlQi1Oa25tSGNQVVBOOGpTNEFEalk2djJnS29meXFnUU54NWhrbEUyT3ZlMm82bWE1MDdpbE1vWFJEM0xRTFNSQkhXNmJhTUJDdVQtUUVlWmczd2ozbURtTXR0b3BLcDRWZkR6SGlhcnZmdGdQc3Q0Z1BoZjAxekowQzloaEtfN2NzN254eUJnSk1yQUw0ZG91aWswQzJ0SmlQalBUdWl5all3cWE?oc=5",
-     "source": "Business Today",
-     "date": "Fri, 20 Nov 2026 06:09:22 GMT"
+     "title": "Sensex jumps 990 points to cross 83,000, Nifty reclaims 25,500 as auto stocks power rally - DD India",
+     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPanJCeTdPVDFXZTB3VEYtcUtpbVJtazVWWmZHTnVPelI1dXh1SlVZWTVOMVV2SUpXV2RiMEp1QllwRnhLT2VMSmFEY2l4aWRkY3J5LUNmQXd0Z2pKZGw5aGN1X1dDYTVhd2FOSmNlb3BMUF9WZVdqYjdpODVKSVFzc21pQTRJOHpoY2NUeDU1ZXo0WS0tZXJ5ZDJtZlAzdTdqR0RPVWFFRm1hR1plTWxFcm5DSFRacEZ4?oc=5",
+     "source": "DD India",
+     "date": "Fri, 20 Nov 2026 17:08:58 GMT"
     },
     {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "WIPRO",
-   "name": "Wipro",
-   "score": 70,
-   "news": [
-    {
-     "title": "Infosys ADR Gains 4% Despite Weak Wall Street Trade - Multibagg AI",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV1YwUkM4SmdzRkVxbk1KbFpzdlJOaG83cHdWdkdXYmtneTRYelhKeHA0UjhxSmphNno5Z2cxU0dYcjlOamNKeHZKaVdyNVdUUGpDQjA4QTQzb2FZWmZzcExScmFNVmt0UzlPdXBQY2NGazFOUExhV3Z0UWNmeW1WUDQtMk9JaDJtbXNod09xLUJzXzJBa0htR3ZSUm53bzVNSWZ3?oc=5",
-     "source": "Multibagg AI",
-     "date": "Fri, 20 Nov 2026 15:00:44 GMT"
-    },
-    {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "TECHM",
-   "name": "Tech Mahindra",
-   "score": 70,
-   "news": [
-    {
-     "title": "Nifty IT Jumps 2.7% as TCS, Tech Mahindra and HCL Tech Gain; Indian IT Stocks Buck Global AI Sell-Off - Univest",
-     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdXJZN2ZuYm5vOFZ1MEVRbVc4YXBpWFZ2b08wTV9zOGVNaHZibDFmOEpOQUc2TmFBWS1acEh5czFja0pOUzFySG1BbVhOTjFxellEcXN6U29SUlBTaFFPZlJ3c01rSFIydjctSGZnbmpxTVk1ZVdXcWVadW9rVXpkTDlyRWc?oc=5",
-     "source": "Univest",
-     "date": "Fri, 20 Nov 2026 05:20:00 GMT"
-    },
-    {
-     "title": "Sensex Today Rallies 898 Points | Nifty Above 25,800 | 2 Reasons Why Indian Share Markets Are Rising - Equitymaster",
-     "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQdWNOVk1HMmJNZ2pmdHZ1Smlub1NnaVluZ0lWQkxmTTk1MVlSNHNrM205dUh4bmM1ejh2Yl96Q3E2YzlMUWswc2dBWDYzc1BTNXB2ak5Ca3N6NkQtb3VKbXdWdUQ2bXFEUTl4UnhOenBkb2NkVEh6MHVlZjZ3RWNGblBWVHF2UFdjeGhjcllNbzJxTEFzVUIwbGFIajZzMnZlaG0wbnR4QThFbFR6ekc1dl9aOWdWY1lTOENXUVlZSmZscUtrRldUakVaMUlacmJTUW1ScDhFR0xndUFCSjg5ak55VTlPaWVIenAtcDlxdw?oc=5",
-     "source": "Equitymaster",
-     "date": "Fri, 20 Nov 2026 10:46:58 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "ASIANPAINT",
-   "name": "Asian Paints",
-   "score": 70,
-   "news": [
-    {
-     "title": "Asian Paints Ltd. Upgraded to Hold by MarketsMOJO Amid Mixed Financial Signals - MarketsMojo",
-     "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNMGRvck56a0xOcm1kUUhSaGdqS3hydUNWZjRiWFNRZlUxV1VMd1A1d2J0VTZLdnNlbWhNYzV6R05va1Ywa05qRVZCeEp2R3FCRXJxdzNaWUNBTG8wYV9aZlpqU28xdV9CWVpXaFh4cGtNb0p0VFZhMDNKWFVDRmtBTzQwLXdSQUJSSlJiMDlDX0JlQjBYR20tcGVoclNJNTNnNDJIZ3c2RlZPN1NRMlgzR2xVamFWQmFZM1dJY3ZybWdsZFNMTkZXY3lBN2lSdmZ0MTZURTd3?oc=5",
-     "source": "MarketsMojo",
-     "date": "Fri, 20 Nov 2026 10:56:40 GMT"
-    },
-    {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "TCS",
-   "name": "TCS",
-   "score": 60,
-   "news": [
-    {
-     "title": "TCS vs Infosys 2027: Dividend Yield, P/E and Q2 Results - Univest",
-     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MN21JWlZ6Mjh1UFQ3YXlxQjNJMy1jXzVVUTB1TzJXbjByV29xMEFCMHh0REMwYlVpRGZKaUFDVWlNR1VIYVFxcjRRSTBlZFRHeUw2N3pZZkZfbmdubEpCLV9CWEY?oc=5",
-     "source": "Univest",
-     "date": "Fri, 20 Nov 2026 05:24:00 GMT"
-    },
-    {
-     "title": "Nifty IT Jumps 2.7% as TCS, Tech Mahindra and HCL Tech Gain; Indian IT Stocks Buck Global AI Sell-Off - Univest",
-     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdXJZN2ZuYm5vOFZ1MEVRbVc4YXBpWFZ2b08wTV9zOGVNaHZibDFmOEpOQUc2TmFBWS1acEh5czFja0pOUzFySG1BbVhOTjFxellEcXN6U29SUlBTaFFPZlJ3c01rSFIydjctSGZnbmpxTVk1ZVdXcWVadW9rVXpkTDlyRWc?oc=5",
-     "source": "Univest",
-     "date": "Fri, 20 Nov 2026 05:20:00 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "INFY",
-   "name": "Infosys",
-   "score": 60,
-   "news": [
-    {
-     "title": "TCS vs Infosys 2027: Dividend Yield, P/E and Q2 Results - Univest",
-     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MN21JWlZ6Mjh1UFQ3YXlxQjNJMy1jXzVVUTB1TzJXbjByV29xMEFCMHh0REMwYlVpRGZKaUFDVWlNR1VIYVFxcjRRSTBlZFRHeUw2N3pZZkZfbmdubEpCLV9CWEY?oc=5",
-     "source": "Univest",
-     "date": "Fri, 20 Nov 2026 05:24:00 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "BPCL",
-   "name": "BPCL",
-   "score": 60,
-   "news": [
-    {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "CIPLA",
-   "name": "Cipla",
-   "score": 60,
-   "news": [
-    {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "DRREDDY",
-   "name": "Dr Reddys",
-   "score": 60,
-   "news": [
-    {
-     "title": "₹200 small-cap stock jumps 4%: Public shareholders' stake can shrink from 50.11% to 10.03% after this update. Details - Livemint",
-     "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPZUhhZEdRVGxwVkRVSW04YkFSaFB3MTZUWnNwb2hyLWhDdzlQVFJaRnFZVWxoQ09uNEFKYzB2ZnRBRWVVQVlMZXY4YlR3cmpSQjVpSUxMaFZkcDRvYUNMN0YwSlJtRkloZWhHWDhad0o1LUpBOHNMZWZqeUE5d2xLNzFhS3VZTzdvMG9HWXBkaFVORFJjX2VidGswV1pOaVdPbHM0ellzVVRpeU9wOG5xa18tV0pSOTE4QlhWaHk2bE9jSWI3NzlYSlB6Tld4VzVTb0NoS01BcWx6VHlzeXZQZkxraGRKUWpoR2xvNGpkc1hiLTlkSS1ZN09DNVRGLVpvQi02TVgwMGZrd0djbTlTQdIBlgJBVV95cUxOUFU3TE1feFFXZENKTmVGa1FyTnc2d25SLThUODcwSl9KTjQ4STR6SDhVUUltSkZGS2NaaFJ3cGFIaktSSm5nMzQwMHpOUUczblR5ZWFUM1h3UkVBLUJDTTM4MzdwWlBycmlBYjNVdHlINFBsUjR1Wl9XNWJZckl0bjlzYTZUOE9RQnU0cmtuRzByTkprcTB3RHpMYzc1Z3o4S1JUaGxhY0gwYnFXZFh0NlBUV2NtME5UbHVKSS1mUTM2SHl6YUZXUmRycFpteWNLbGVfMlY0NHY0RWtPRHpnN1ZXOXhRSTE4cFp5cDJaNHhDdmtPdFZJdlpmam12elhhNno3Wll2NjJjS0Vkc2F6RFVsZDNaUQ?oc=5",
-     "source": "Livemint",
-     "date": "Fri, 20 Nov 2026 05:42:18 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "POWERGRID",
-   "name": "Power Grid",
-   "score": 60,
-   "news": [
-    {
-     "title": "NTPC vs Power Grid 2027: Dividend Yield and Q2 Results - Univest",
-     "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE84V2V1OGZJZW9IZzRMOEhqb0ZIZV9tTmZlSzdKTWJ0UmhTZzBCQkE1a1ZxMUYyTHZSRWdBdjBORGVac1dIdGlmVFpwTU1Ca2JHMXFXaXZRZU16eDVoMHVaUTBR?oc=5",
-     "source": "Univest",
-     "date": "Fri, 20 Nov 2026 05:26:51 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "DLF",
-   "name": "DLF",
-   "score": 60,
-   "news": [
-    {
-     "title": "Closing Bell: D-St shrugs off weak global cues; Nifty at 25,800, Sensex gains 898 pts - IndiaIPO",
-     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRU9EYnJzYURkVW1Cb3lzcTZic0RLZzMxbEpGQ19YNFhXdXZHYXJNb2pvTTQzQU5QTXA0Snd2d1NVNVhvX0g3dmREQlRVVjB2NHVfNl9rUGxFdjI5UW1hWFVMakdVbC1ZQmt5RDJxN2Rhd1A3MkkyQ2dHaWpLQUdrb0pmMGU4T0xpUWdXVVhIbjBYdzRVMVhFN29hOEtuRjh5RlNvWXRpV0Z1Q1B5SkpsU0hhZVc4ak1N?oc=5",
-     "source": "IndiaIPO",
-     "date": "Fri, 20 Nov 2026 20:41:49 GMT"
-    },
-    {
-     "title": "Nifty Realty Index Up 16% in a Month, Near Record High - Business Upturn",
-     "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWFJBaXlBazAtMGYzWHV4dzEtZkJiM1d2eE54cy05NjF6YmE5NzdQN0NIc2ZuQnY0c3FOb3lKY1cwZFpPNTFncFRnajlISnhTbE9LVTRuY3JJdm1IWWtkbnluWFNSeDVvWEhuR19JQ0VBSUdmSWtVQjB5U3RzY2lRUGZacGR4dWl5alZ1WDVnMjM3Z01aTzk2TW5KeWpGelFhcDN5TzJpT1hGbnNzTzduWWpZVVUtcEZMNm92d3lzdHRGQktFLWJnNDN4Q2k5dVlnY3lfNW55OHFlemlXN2ViUHpOMkxGWlNRUThRZnozVzIyQQ?oc=5",
-     "source": "Business Upturn",
-     "date": "Fri, 20 Nov 2026 08:03:48 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "HINDUNILVR",
-   "name": "Hindustan Unilever",
-   "score": 60,
-   "news": [
-    {
-     "title": "Stock markets defy global rout; Sensex jumps 898 points, Nifty climbs to 25,800 - The Hindu",
-     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPT1NMbmNzWUV2SFlYUE0yWmJhZW1UV2Fxa1pQOGJpdUp0TlgzTzNSZ2Q1clFaQ1RDX0NZYVQtUFdpVGUtTkZWdzJZaGkxR3JidUNrcGU5aGZmcjM5YlJ3UnpnX1dmamdDbTdrODhkc3BiUkpXZlZPX2NFQWd2THdxUkQ2VndNNzE0cE9iV1BRejdfa0tmM2p5dlk4MkRHVXRJSy05bHo2YVFHbnJJVFgySFNSTzdEVHVnbE5hVzEydkQ1WFo0Mk9rQjNxc3RTekw4aXNiT9IB2wFBVV95cUxNZkE5RnVyYXpsSkNRa1NwazRiS3dZa1ptZnY1YWVOZEZQbThDUDBxaEpwMHN3OUdZWk9lRnEtckNEZV9neDFGRzRVRHhmUWFlQ2lRcm5xSERzRHdfZ0ZiUVVIN09fRkFrWnJsQ0VuOTg4SE5TNFBaeGJGQThkVlBxaE1LcGpuZGlVSVhheUFPODk4ZGFkS2lDQXpzN3ZUNUdlbFphcDFKdlJYbVVpb09kVWZheWJibGI3cTI4SlVpWHZMY0F6Wl9YNlpFeVFmcG8xUnNOSTBoekd1QTg?oc=5",
-     "source": "The Hindu",
-     "date": "Fri, 20 Nov 2026 11:02:07 GMT"
-    },
-    {
-     "title": "Sensex Jumps 898 Points, Nifty Climbs to 25,800 Defying Global Rout - Rediff",
-     "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNQUFtam4xWFJHUlZ5Z0U0WTlWQ1BycHhVNWdxMlZlRllwQXExYUNpakQ3bURyVHExOUE4WmZ1dHZCZ2JLYzNqZXZXRUJlTHFyM1JwN2p3THFjUjVDUmVoZ0ZiM1dtVEtTNU1GZmhFR0VrN0ozQ2k1V3ZPSW9wdHE3cXVjQjFaWHRudTVQOTRHVmpkbFN5UGlUTEk0TXdYLTBOdjczVlRpbjdiRi03LWp5UkgxNHU5X3ZiQ05reWR4NzlZS3RmcXpNeXVVZ3FUYlNnLTVVQWl6LUFULWFRakh1TnJ5cnJyT03SAeoBQVVfeXFMT2NYeW5UT2xTY2FXUmEtWTh2SmFQUDczWVZlWkFBQkhzRE9jWkJFaWx6a1dyZTJUUEdwd1JvVWROcm1sWVJQaU5uMTBHcVZrWTk5Mk1PTVBZdFluV2xrUTlRRE9hbFZ6SXgydXQ0QmN6bEtEdG9FNXVhQjNPVXl5THVmNnpZSzdXTWF3TFhVRWhDVzFyYUFFVXA0SmVNQUw1Zk1OOThaWE1iRjU5b0FrTTVHN3QxeVZMMUZEY2Q3TjhDQVZRX256NTdVdThDNGhZX0pOa3I4VTJWOWpxVW5Cekp6S1p4dEdQYjRR?oc=5",
-     "source": "Rediff",
-     "date": "Fri, 20 Nov 2026 11:13:50 GMT"
-    }
-   ]
-  },
-  {
-   "symbol": "NESTLEIND",
-   "name": "Nestle India",
-   "score": 60,
-   "news": [
-    {
-     "title": "Nestle India rallies Friday, outperforms competitors - MarketWatch",
-     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWmpaUmJkcGtIUTFoRVVOUGdLNWRZT3lrNFQtTlA5V3NtYVZDZnpEelNLa3lkbmlnUWE0N3ZaRXJkeHJ1Tzh6QXRMMUdPQmE4M0ZhR2JJaWNpblU3SmVxYjVzNkJGTUhpWnhtWmkwbnpsUVpsWUllQ2tBcl94UnJZNmI3V1EwNzlqZ01WUHE1MGpsM0Vncl9uWjJfTldaWkgybHpiQXBtTDU3YnpZbnVMS1h3ek5adDlsSnVqanA3VW1oaWRFa2xnYg?oc=5",
-     "source": "MarketWatch",
-     "date": "Fri, 20 Nov 2026 10:32:00 GMT"
+     "title": "JWL Secures Repeat Order Worth ₹128.61 Crore from JSW (South) Rail Logistics - Machine Maker",
+     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSGdtYzVPckVSamdIeUhWY0NBbF9ScWIybi1mRjFMazZuNzdWQTl1ckFuMjhHRFY2b3FrZ01RdVBOSmJ3Vk41NnlDNDdLRUFLdW5BSUJNdkhqd3A1dHJuYnhfc2d5akpNREwzQ2ZVWnA1bFhlVDJXWlMtUTJmNy1uVjZUeFBvTjV2QjVDcE13TGF4ZUoyNnBXZHVfUVgwMC1GbFhsMFBKa2QybmthYk1oVXQ3bEk5clU?oc=5",
+     "source": "Machine Maker",
+     "date": "Sat, 21 Nov 2026 06:57:04 GMT"
     }
    ]
   }
