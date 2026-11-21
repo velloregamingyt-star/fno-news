@@ -3,29 +3,46 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>F&O Positive News</title>
 <style>
-:root{--bg:#f6f7f9;--cd:#fff;--tx:#14181f;--mu:#5b6572;--bd:#e2e6eb;--ac:#0a7d4f;--bg2:#e3f4ec}
-@media(prefers-color-scheme:dark){:root{--bg:#0f1318;--cd:#171d25;--tx:#e8ecf1;--mu:#9aa5b3;--bd:#27303b;--ac:#4fd39a;--bg2:#12312a}}
+:root{--bg:#f6f7f9;--cd:#fff;--tx:#14181f;--mu:#5b6572;--bd:#e2e6eb;--ac:#0a7d4f;--bg2:#e3f4ec;--rd:#c0392b;--am:#9a5b00}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1318;--cd:#171d25;--tx:#e8ecf1;--mu:#9aa5b3;--bd:#27303b;--ac:#4fd39a;--bg2:#12312a;--rd:#ff7b6b;--am:#f0b45a}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif}
 main{max-width:960px;margin:auto;padding:20px 16px 40px}h1{font-size:22px;margin:0 0 4px}
 .b{padding:9px 12px;border-radius:8px;background:var(--bg2);color:var(--ac);font-size:13px;margin:10px 0 14px}
-input{width:100%;padding:9px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit;margin-bottom:14px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+input,select{padding:9px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit}
+input{flex:1;min-width:150px}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
 .c{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:14px}
 .s{font-weight:700;font-size:17px}.n{color:var(--mu);font-size:12px}
 .m{height:6px;background:var(--bd);border-radius:9px;margin:8px 0 10px;overflow:hidden}.m i{display:block;height:100%;background:var(--ac)}
+.v{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:var(--bg);margin-bottom:8px;font-size:13px}
+.v b{font-size:13px}.up{color:var(--ac)}.dn{color:var(--rd)}.hi{color:var(--am)}.mu{color:var(--mu)}
+.v small{color:var(--mu);display:block;font-size:11px}
 a{color:var(--tx);text-decoration:none;display:block;font-size:13px;padding:5px 0;border-top:1px solid var(--bd)}a:hover{color:var(--ac)}
 .d{font-size:12px;color:var(--mu);margin-top:22px}
 </style></head><body><main>
 <h1>📈 F&amp;O stocks with positive news</h1>
 <div class="b" id="b">Loading…</div>
-<input id="q" placeholder="Search stock…"><div class="g" id="g"></div>
-<p class="d">Auto-generated from public news headlines using keyword matching, so it can be wrong or miss context. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
+<div class="bar"><input id="q" placeholder="Search stock…">
+<select id="o"><option value="score">Sort: News score</option><option value="vol">Sort: Volume (high to low)</option><option value="chg">Sort: Price change</option></select></div>
+<div class="g" id="g"></div>
+<p class="d">Volume = last trading day's volume vs previous 20-day average (Yahoo Finance, end of day, not live). News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
 </main><script>
 let D=[];const g=document.getElementById('g');
-const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function r(){const k=q.value.toLowerCase();
-g.innerHTML=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k)).map(d=>`<div class="c"><div class="s">${esc(d.symbol)}</div><div class="n">${esc(d.name)}</div><div class="m"><i style="width:${d.score}%"></i></div>${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div>`).join('')||'<p class="n">No stocks.</p>'}
-q.oninput=r;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function vol(v){
+ if(!v)return '<div class="v"><span class="mu">Volume data not available</span></div>';
+ let t,c;const r=v.ratio;
+ if(r>=1.5){t='🔥 High volume';c='hi'}else if(r>=1.1){t='↑ Above average';c='up'}
+ else if(r>=0.8){t='→ Normal';c='mu'}else{t='↓ Below average';c='dn'}
+ const p=v.chg>=0?'+':'';
+ return `<div class="v"><span><b class="${c}">${t} (${r}x)</b><small>as of ${esc(v.asof)} · vs 20-day avg</small></span><b class="${v.chg>=0?'up':'dn'}">${p}${v.chg}%</b></div>`}
+function r(){const k=q.value.toLowerCase(),m=o.value;
+ let a=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k));
+ const key={score:d=>d.score,vol:d=>d.vol?d.vol.ratio:-1,chg:d=>d.vol?d.vol.chg:-99}[m];
+ a.sort((x,y)=>key(y)-key(x));
+ g.innerHTML=a.map(d=>`<div class="c"><div class="s">${esc(d.symbol)}</div><div class="n">${esc(d.name)}</div><div class="m"><i style="width:${d.score}%"></i></div>${vol(d.vol)}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div>`).join('')||'<p class="n">No stocks.</p>'}
+q.oninput=r;o.oninput=r;
 fetch('data.json?'+Date.now()).then(x=>x.json()).then(j=>{D=j.stocks;
 const t=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
 b.textContent=(j.date===t?'✅ Updated today: ':'⚠️ Last updated: ')+j.updated+' · '+D.length+' stocks';r()}).catch(()=>b.textContent='data.json not found. Run the workflow once.');
