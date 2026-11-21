@@ -75,11 +75,46 @@ def score(title):
     t = title.lower()
     return sum(k in t for k in POS) - sum(k in t for k in NEG)
 
+def ema_series(vals, n):
+    k = 2 / (n + 1)
+    out = [vals[0]]
+    for v in vals[1:]:
+        out.append(v * k + out[-1] * (1 - k))
+    return out
+
+def rsi14(closes, n=14):
+    gains = losses = 0.0
+    for i in range(1, n + 1):
+        d = closes[i] - closes[i - 1]
+        gains += max(d, 0); losses += max(-d, 0)
+    ag, al = gains / n, losses / n
+    for i in range(n + 1, len(closes)):
+        d = closes[i] - closes[i - 1]
+        ag = (ag * (n - 1) + max(d, 0)) / n
+        al = (al * (n - 1) + max(-d, 0)) / n
+    return 100.0 if al == 0 else 100 - 100 / (1 + ag / al)
+
+def indicators(closes):
+    """ScanX 'Momentum Titans' style: EMA20>EMA50, RSI14>=70, MACD hist>=0, Close>=Upper Bollinger(20,2)."""
+    if len(closes) < 55:
+        return None
+    e20, e50 = ema_series(closes, 20)[-1], ema_series(closes, 50)[-1]
+    macd = [a - b for a, b in zip(ema_series(closes, 12), ema_series(closes, 26))]
+    hist = macd[-1] - ema_series(macd, 9)[-1]
+    w = closes[-20:]
+    mean = sum(w) / 20
+    sd = (sum((x - mean) ** 2 for x in w) / 20) ** 0.5
+    bb = mean + 2 * sd
+    rsi = rsi14(closes)
+    titan = e20 > e50 and rsi >= 70 and hist >= 0 and closes[-1] >= bb
+    return {"ema20": round(e20, 2), "ema50": round(e50, 2), "rsi": round(rsi, 1),
+            "macdh": round(hist, 2), "bbup": round(bb, 2), "titan": bool(titan)}
+
 def volume(sym):
     """Last trading day's volume vs previous 20-day average + momentum numbers (Yahoo Finance, end of day)."""
     try:
         tk = YAHOO.get(sym, urllib.parse.quote(sym, safe="-") + ".NS")
-        j = json.loads(get(f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}?range=2mo&interval=1d"))
+        j = json.loads(get(f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}?range=6mo&interval=1d"))
         r = j["chart"]["result"][0]
         q = r["indicators"]["quote"][0]
         rows = [(t, c, v) for t, c, v in zip(r["timestamp"], q["close"], q["volume"]) if c and v]
@@ -95,9 +130,11 @@ def volume(sym):
         ratio = last[2] / avg
         mom = ratio * 25 if ratio < 2 else 50
         mom += max(0, min(20, chg * 6)) + max(0, min(15, ret5 * 2.5)) + (15 if brk else 0)
+        ind = indicators(closes)
         d = datetime.fromtimestamp(last[0], timezone(timedelta(hours=5, minutes=30))).strftime("%d %b")
         return {"ratio": round(ratio, 2), "vol": int(last[2]), "avg": int(avg), "price": round(last[1], 2),
                 "chg": round(chg, 2), "ret5": round(ret5, 2), "brk": bool(brk), "mom": int(min(100, mom)), "asof": d,
+                "ind": ind, "titan": bool(ind and ind["titan"]),
                 "closes": [round(c, 2) for c in closes[-30:]], "vols": [int(v) for _, _, v in rows[-30:]]}
     except Exception as e:
         print("no volume", sym, e)
@@ -123,7 +160,7 @@ for sym, name in STOCKS.items():
     if not v and not news:
         continue
     # keep chart series only where useful (keeps data.json small)
-    if v and not (news or v["ratio"] >= 1.2):
+    if v and not (news or v["ratio"] >= 1.2 or v["titan"]):
         v["closes"] = v["vols"] = []
     results.append({"symbol": sym, "name": name, "score": ns, "news": news, "vol": v})
 
@@ -132,4 +169,5 @@ ist = datetime.now(timezone(timedelta(hours=5, minutes=30)))
 json.dump({"updated": ist.strftime("%Y-%m-%d %H:%M IST"), "date": ist.strftime("%Y-%m-%d"),
            "scanned": len(STOCKS), "stocks": results}, open("data.json", "w"), indent=1, ensure_ascii=False)
 mo = [r for r in results if r["vol"] and r["vol"]["ratio"] >= 1.5 and r["vol"]["chg"] > 0]
+print(sum(1 for r in results if r["vol"] and r["vol"]["titan"]), "Momentum Titans;")
 print(len(results), "stocks;", len(mo), "high-volume gainers;", sum(1 for r in mo if r["news"]), "of them with news")
