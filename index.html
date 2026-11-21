@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>F&O Positive News</title>
+<style>
+:root{--bg:#f6f7f9;--cd:#fff;--tx:#14181f;--mu:#5b6572;--bd:#e2e6eb;--ac:#0a7d4f;--bg2:#e3f4ec}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1318;--cd:#171d25;--tx:#e8ecf1;--mu:#9aa5b3;--bd:#27303b;--ac:#4fd39a;--bg2:#12312a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif}
+main{max-width:960px;margin:auto;padding:20px 16px 40px}h1{font-size:22px;margin:0 0 4px}
+.b{padding:9px 12px;border-radius:8px;background:var(--bg2);color:var(--ac);font-size:13px;margin:10px 0 14px}
+input{width:100%;padding:9px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit;margin-bottom:14px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.s{font-weight:700;font-size:17px}.n{color:var(--mu);font-size:12px}
+.m{height:6px;background:var(--bd);border-radius:9px;margin:8px 0 10px;overflow:hidden}.m i{display:block;height:100%;background:var(--ac)}
+a{color:var(--tx);text-decoration:none;display:block;font-size:13px;padding:5px 0;border-top:1px solid var(--bd)}a:hover{color:var(--ac)}
+.d{font-size:12px;color:var(--mu);margin-top:22px}
+</style></head><body><main>
+<h1>📈 F&amp;O stocks with positive news</h1>
+<div class="b" id="b">Loading…</div>
+<input id="q" placeholder="Search stock…"><div class="g" id="g"></div>
+<p class="d">Auto-generated from public news headlines using keyword matching, so it can be wrong or miss context. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
+</main><script>
+let D=[];const g=document.getElementById('g');
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function r(){const k=q.value.toLowerCase();
+g.innerHTML=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k)).map(d=>`<div class="c"><div class="s">${esc(d.symbol)}</div><div class="n">${esc(d.name)}</div><div class="m"><i style="width:${d.score}%"></i></div>${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div>`).join('')||'<p class="n">No stocks.</p>'}
+q.oninput=r;
+fetch('data.json?'+Date.now()).then(x=>x.json()).then(j=>{D=j.stocks;
+const t=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
+b.textContent=(j.date===t?'✅ Updated today: ':'⚠️ Last updated: ')+j.updated+' · '+D.length+' stocks';r()}).catch(()=>b.textContent='data.json not found. Run the workflow once.');
+</script></body></html>
