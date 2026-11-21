@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>F&O Positive News Scanner</title>
+<title>F&O Momentum Scanner</title>
 <style>
 :root{--bg:#f1f3fb;--cd:#fff;--tx:#141a2e;--mu:#62708a;--bd:#e0e5f2;--g:#12b76a;--gb:#dcfae6;--r:#f04438;--rb:#fee4e2;--a:#f79009;--ab:#fef0c7;--b:#2e90fa;--bb:#d1e9ff;--p:#7a5af8;--pb:#ebe9fe}
 @media(prefers-color-scheme:dark){:root{--bg:#0b1020;--cd:#141b30;--tx:#e9edf8;--mu:#93a0bd;--bd:#25304d;--gb:#0f3a2a;--rb:#43191a;--ab:#3d2c0c;--bb:#10304f;--pb:#2a2160}}
@@ -44,22 +44,26 @@ svg.sp{width:100%;height:42px;display:block}
 .cb svg{width:100%;height:130px;display:block}
 .det a{display:block;text-decoration:none;color:var(--tx);font-size:13px;padding:8px 10px;margin-top:6px;background:var(--cd);border:1px solid var(--bd);border-left:3px solid var(--g);border-radius:8px}.det a:hover{border-left-color:var(--p)}
 .meta{font-size:12px;color:var(--mu)}
+.item.nw{background:linear-gradient(90deg,var(--ab),var(--cd) 40%);box-shadow:0 0 0 2px var(--a),0 6px 16px rgba(247,144,9,.25)}
+.nb{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:700;background:var(--a);color:#fff;vertical-align:middle}
+.tg{font-size:11px;margin-top:2px;color:var(--mu)}
 .empty{padding:28px;text-align:center;color:var(--mu);background:var(--cd);border-radius:14px}
 .d{font-size:12px;color:var(--mu);margin-top:18px}
 @media(max-width:640px){.row{grid-template-columns:1fr auto;grid-template-areas:"a b""c c""d d"}.row>:nth-child(1){grid-area:a}.row>:nth-child(2){grid-area:c}.row>:nth-child(3){grid-area:b;text-align:right}.row>:nth-child(4){grid-area:d}.row>:nth-child(5){display:none}}
 </style></head><body>
-<div class="hero"><div class="wrap"><h1>📈 F&amp;O stocks with positive news</h1><p id="up">Loading…</p></div></div>
+<div class="hero"><div class="wrap"><h1>🚀 F&amp;O momentum + volume scanner</h1><p id="up">Loading…</p></div></div>
 <main>
-<div class="stat"><div class="s1"><b id="s1">-</b><span>Stocks scanned</span></div><div class="s2"><b id="s2">-</b><span>With positive news</span></div><div class="s3"><b id="s3">-</b><span>High volume (1.5x+)</span></div><div class="s4"><b id="s4">-</b><span>Price up</span></div></div>
+<div class="stat"><div class="s1"><b id="s1">-</b><span>Stocks scanned</span></div><div class="s2"><b id="s2">-</b><span>High-volume gainers</span></div><div class="s3"><b id="s3">-</b><span>…of them with news 📰</span></div><div class="s4"><b id="s4">-</b><span>All with news</span></div></div>
 <div class="tools"><input id="q" placeholder="Search stock…">
-<select id="o"><option value="score">Sort: News score</option><option value="vol">Sort: Volume ratio</option><option value="chg">Sort: Price change</option><option value="az">Sort: A to Z</option></select></div>
+<select id="o"><option value="mom">Sort: Momentum score</option><option value="vol">Sort: Volume ratio</option><option value="score">Sort: News score</option><option value="chg">Sort: Price change</option><option value="az">Sort: A to Z</option></select></div>
 <div class="chips" id="ch"></div>
 <div class="list" id="L"></div>
-<p class="d">Charts show the last ~30 trading days (Yahoo Finance, end of day, not live). Volume is the last day against the previous 20-day average. Click a stock to open charts and news. News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
+<p class="d">Momentum score (0-100) combines volume ratio, 1-day and 5-day price gain and 20-day breakout. Charts show the last ~30 trading days (Yahoo Finance, end of day, not live). Volume is the last day against the previous 20-day average. Orange-highlighted stocks also have positive news. Click a stock to open charts and news. News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
 </main><script>
-let D=[],F='all',N=0;const $=i=>document.getElementById(i);
+let D=[],F='mo',N=0;const $=i=>document.getElementById(i);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const FIL={all:['All',()=>true],hv:['🔥 High volume',d=>d.vol&&d.vol.ratio>=1.5],ab:['↑ Above avg volume',d=>d.vol&&d.vol.ratio>=1.1],up:['▲ Price up',d=>d.vol&&d.vol.chg>0],dn:['▼ Price down',d=>d.vol&&d.vol.chg<0]};
+const HV=d=>d.vol&&d.vol.ratio>=1.5&&d.vol.chg>0;
+const FIL={mo:['🚀 High volume gainers',HV],mn:['📰 Gainers with news',d=>HV(d)&&d.news.length>0],nw:['📰 All with news',d=>d.news.length>0],hv:['🔥 High volume',d=>d.vol&&d.vol.ratio>=1.5],br:['⬆ 20-day breakout',d=>d.vol&&d.vol.brk],up:['▲ Price up',d=>d.vol&&d.vol.chg>0],dn:['▼ Price down',d=>d.vol&&d.vol.chg<0],all:['All',()=>true]};
 function chips(){$('ch').innerHTML=Object.entries(FIL).map(([k,[t,f]])=>`<button class="chip ${F===k?'on':''}" data-k="${k}">${t} (${D.filter(f).length})</button>`).join('')}
 $('ch').onclick=e=>{const k=e.target.dataset.k;if(k){F=k;r()}};
 function vinfo(x){return x>=1.5?['🔥 High','pa','var(--a)']:x>=1.1?['↑ Above avg','pg','var(--g)']:x>=0.8?['→ Normal','pb','var(--b)']:['↓ Below avg','pr','var(--r)']}
@@ -74,19 +78,20 @@ const bars=v.map((x,i)=>{const bh=(h-20)*x/mx,up=i===0||c[i]>=c[i-1];return `<re
 const ay=h-(h-20)*avg/mx;return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${bars}<line x1="10" x2="${w-10}" y1="${ay}" y2="${ay}" stroke="var(--p)" stroke-width="1.5" stroke-dasharray="4 3"/><text x="12" y="12" font-size="10" fill="var(--p)">- - 20-day avg</text></svg>`}
 function r(){chips();N=0;const k=$('q').value.toLowerCase(),m=$('o').value;
  let a=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k)&&FIL[F][1](d));
- const key={score:d=>d.score,vol:d=>d.vol?d.vol.ratio:-1,chg:d=>d.vol?d.vol.chg:-99}[m];
+ const key={mom:d=>d.vol?d.vol.mom:-1,score:d=>d.score,vol:d=>d.vol?d.vol.ratio:-1,chg:d=>d.vol?d.vol.chg:-99}[m];
  a.sort(m==='az'?(x,y)=>x.symbol.localeCompare(y.symbol):(x,y)=>key(y)-key(x));
  $('L').innerHTML=a.map(d=>{const v=d.vol;let bc='var(--bd)',price='<span class="mu">-</span>',vol='<span class="mu">No volume data</span>',det='';
  if(v){const [t,cls,col]=vinfo(v.ratio);bc=col;
   price=`<span class="pc ${v.chg>=0?'up':'dn'}">${v.chg>=0?'▲ +':'▼ '}${v.chg}%</span> <span class="nm">₹${v.price}</span>`;
   vol=`<div class="vb"><div class="t"><span class="pill ${cls}">${t}</span><b>${v.ratio}x</b></div><div class="bar"><i style="width:${Math.min(100,v.ratio/2*100)}%;background:${col}"></i></div></div>`;
-  det=`<div class="charts"><div class="cb"><h4>Price, last ${v.closes?v.closes.length:0} days</h4>${big(v.closes)}</div><div class="cb"><h4>Volume (green = up day, red = down day)</h4>${vbars(v.vols,v.closes,v.avg)}</div></div><div class="meta">Volume ${v.vol.toLocaleString('en-IN')} vs avg ${v.avg.toLocaleString('en-IN')} · as of ${esc(v.asof)}</div>`}
- return `<div class="item" style="--bc:${bc}"><div class="row"><div><div class="sym">${esc(d.symbol)}</div><div class="nm">${esc(d.name)}</div></div><div>${v?spark(v.closes,140,42):''}</div><div>${price}</div>${vol}<div class="sc" style="--v:${d.score}"><span>${d.score}</span></div></div><div class="det">${det}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div></div>`}).join('')||'<div class="empty">No stocks match.</div>'}
+  det=(v.closes&&v.closes.length>2?`<div class="charts"><div class="cb"><h4>Price, last ${v.closes?v.closes.length:0} days</h4>${big(v.closes)}</div><div class="cb"><h4>Volume (green = up day, red = down day)</h4>${vbars(v.vols,v.closes,v.avg)}</div></div>`:'')+`<div class="meta">Volume ${v.vol.toLocaleString('en-IN')} vs avg ${v.avg.toLocaleString('en-IN')} · as of ${esc(v.asof)}</div>`}
+ const hn=d.news.length>0,rv=v?v.mom:d.score;
+ return `<div class="item${hn?' nw':''}" style="--bc:${bc}"><div class="row"><div><div class="sym">${esc(d.symbol)}${hn?`<span class="nb">📰 ${d.news.length}</span>`:''}</div><div class="nm">${esc(d.name)}</div>${v?`<div class="tg">5d ${v.ret5>=0?'+':''}${v.ret5}%${v.brk?' · ⬆ 20d high':''}</div>`:''}</div><div>${v?spark(v.closes,140,42):''}</div><div>${price}</div>${vol}<div class="sc" style="--v:${rv}" title="Momentum score"><span>${rv}</span></div></div><div class="det">${det}${hn?'':'<div class="meta" style="padding-top:8px">No positive news found in the last 24h</div>'}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div></div>`}).join('')||'<div class="empty">No stocks match.</div>'}
 $('L').onclick=e=>{if(e.target.closest('a'))return;const r=e.target.closest('.row');if(r)r.parentNode.classList.toggle('open')};
 $('q').oninput=r;$('o').oninput=r;
 fetch('data.json?'+Date.now()).then(x=>x.json()).then(j=>{D=j.stocks;
  const t=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
  $('up').textContent=(j.date===t?'✅ Updated today: ':'⚠️ Last updated: ')+j.updated;
- $('s1').textContent=j.scanned||'-';$('s2').textContent=D.length;
- $('s3').textContent=D.filter(FIL.hv[1]).length;$('s4').textContent=D.filter(FIL.up[1]).length;r()}).catch(()=>$('up').textContent='data.json not found. Run the workflow once.');
+ $('s1').textContent=j.scanned||'-';
+ $('s2').textContent=D.filter(HV).length;$('s3').textContent=D.filter(d=>HV(d)&&d.news.length).length;$('s4').textContent=D.filter(d=>d.news.length).length;r()}).catch(()=>$('up').textContent='data.json not found. Run the workflow once.');
 </script></body></html>
