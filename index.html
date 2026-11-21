@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>F&O Positive News</title>
+<title>F&O Positive News Scanner</title>
 <style>
-:root{--bg:#f6f7f9;--cd:#fff;--tx:#14181f;--mu:#5b6572;--bd:#e2e6eb;--ac:#0a7d4f;--bg2:#e3f4ec;--rd:#c0392b;--am:#9a5b00}
-@media(prefers-color-scheme:dark){:root{--bg:#0f1318;--cd:#171d25;--tx:#e8ecf1;--mu:#9aa5b3;--bd:#27303b;--ac:#4fd39a;--bg2:#12312a;--rd:#ff7b6b;--am:#f0b45a}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,sans-serif}
-main{max-width:960px;margin:auto;padding:20px 16px 40px}h1{font-size:22px;margin:0 0 4px}
-.b{padding:9px 12px;border-radius:8px;background:var(--bg2);color:var(--ac);font-size:13px;margin:10px 0 14px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+:root{--bg:#f4f6f8;--cd:#fff;--tx:#12161c;--mu:#5d6876;--bd:#e1e5ea;--ac:#0a7d4f;--acb:#e0f3ea;--rd:#c0392b;--rdb:#fbe5e2;--am:#9a5b00;--amb:#fdefd3}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1217;--cd:#161c24;--tx:#e8ecf1;--mu:#98a3b1;--bd:#262f3a;--ac:#4fd39a;--acb:#10302a;--rd:#ff7b6b;--rdb:#3a1b18;--am:#f0b45a;--amb:#35290f}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1000px;margin:auto;padding:16px 14px 50px}
+h1{font-size:21px;margin:4px 0 2px}.sub{color:var(--mu);font-size:13px;margin:0 0 12px}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px}
+.stat div{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:9px 12px}
+.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--mu)}
+.tools{position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 input,select{padding:9px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit}
-input{flex:1;min-width:150px}
-.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
-.c{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:14px}
-.s{font-weight:700;font-size:17px}.n{color:var(--mu);font-size:12px}
-.m{height:6px;background:var(--bd);border-radius:9px;margin:8px 0 10px;overflow:hidden}.m i{display:block;height:100%;background:var(--ac)}
-.v{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:var(--bg);margin-bottom:8px;font-size:13px}
-.v b{font-size:13px}.up{color:var(--ac)}.dn{color:var(--rd)}.hi{color:var(--am)}.mu{color:var(--mu)}
-.v small{color:var(--mu);display:block;font-size:11px}
-a{color:var(--tx);text-decoration:none;display:block;font-size:13px;padding:5px 0;border-top:1px solid var(--bd)}a:hover{color:var(--ac)}
-.d{font-size:12px;color:var(--mu);margin-top:22px}
+input{flex:1;min-width:140px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 10px}
+.chip{padding:6px 12px;border:1px solid var(--bd);border-radius:99px;background:var(--cd);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
+.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.list{background:var(--cd);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+.hd,.row{display:grid;grid-template-columns:minmax(110px,1.3fr) 80px minmax(130px,1.4fr) 50px;gap:10px;align-items:center;padding:10px 14px}
+.hd{font-size:12px;color:var(--mu);background:var(--bg);border-bottom:1px solid var(--bd)}
+.item{border-bottom:1px solid var(--bd)}.item:last-child{border:0}
+.row{cursor:pointer}.row:hover{background:var(--bg)}
+.sym{font-weight:700}.nm{font-size:12px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc{font-weight:600}.up{color:var(--ac)}.dn{color:var(--rd)}.hi{color:var(--am)}.mu{color:var(--mu)}
+.vb{display:flex;flex-direction:column;gap:3px;font-size:12px}
+.vb .t{display:flex;justify-content:space-between}
+.bar{height:5px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%}
+.sc{font-size:12px;text-align:center;border-radius:6px;padding:2px 0;background:var(--acb);color:var(--ac);font-weight:600}
+.det{display:none;padding:2px 14px 12px;background:var(--bg)}.item.open .det{display:block}
+.det a{display:block;text-decoration:none;color:var(--tx);font-size:13px;padding:7px 0;border-top:1px solid var(--bd)}.det a:hover{color:var(--ac)}
+.det small{color:var(--mu)}.meta{font-size:12px;color:var(--mu);padding:8px 0 4px}
+.empty{padding:24px;text-align:center;color:var(--mu)}
+.d{font-size:12px;color:var(--mu);margin-top:18px}
+@media(max-width:560px){.hd{display:none}.row{grid-template-columns:1fr auto;grid-template-areas:"a c""b b"}.row>:nth-child(1){grid-area:a}.row>:nth-child(2){grid-area:c;text-align:right}.row>:nth-child(3){grid-area:b}.row>:nth-child(4){display:none}}
 </style></head><body><main>
 <h1>📈 F&amp;O stocks with positive news</h1>
-<div class="b" id="b">Loading…</div>
-<div class="bar"><input id="q" placeholder="Search stock…">
-<select id="o"><option value="score">Sort: News score</option><option value="vol">Sort: Volume (high to low)</option><option value="chg">Sort: Price change</option></select></div>
-<div class="g" id="g"></div>
-<p class="d">Volume = last trading day's volume vs previous 20-day average (Yahoo Finance, end of day, not live). News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
+<p class="sub" id="up">Loading…</p>
+<div class="stat"><div><b id="s1">-</b><span>Stocks scanned</span></div><div><b id="s2">-</b><span>With positive news</span></div><div><b id="s3">-</b><span>High volume (1.5x+)</span></div><div><b id="s4">-</b><span>Price up</span></div></div>
+<div class="tools"><input id="q" placeholder="Search stock…">
+<select id="o"><option value="score">Sort: News score</option><option value="vol">Sort: Volume ratio</option><option value="chg">Sort: Price change</option><option value="az">Sort: A to Z</option></select></div>
+<div class="chips" id="ch"></div>
+<div class="list"><div class="hd"><span>Stock</span><span>Price</span><span>Volume vs 20-day avg</span><span>News</span></div><div id="L"></div></div>
+<p class="d">Volume is the last trading day's volume against the previous 20-day average (Yahoo Finance, end of day, not live). Click a row to read the news. News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
 </main><script>
-let D=[];const g=document.getElementById('g');
+let D=[],F='all';const $=i=>document.getElementById(i);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function vol(v){
- if(!v)return '<div class="v"><span class="mu">Volume data not available</span></div>';
- let t,c;const r=v.ratio;
- if(r>=1.5){t='🔥 High volume';c='hi'}else if(r>=1.1){t='↑ Above average';c='up'}
- else if(r>=0.8){t='→ Normal';c='mu'}else{t='↓ Below average';c='dn'}
- const p=v.chg>=0?'+':'';
- return `<div class="v"><span><b class="${c}">${t} (${r}x)</b><small>as of ${esc(v.asof)} · vs 20-day avg</small></span><b class="${v.chg>=0?'up':'dn'}">${p}${v.chg}%</b></div>`}
-function r(){const k=q.value.toLowerCase(),m=o.value;
- let a=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k));
+const FIL={all:['All',()=>true],hv:['🔥 High volume',d=>d.vol&&d.vol.ratio>=1.5],ab:['↑ Above avg volume',d=>d.vol&&d.vol.ratio>=1.1],up:['Price up',d=>d.vol&&d.vol.chg>0],dn:['Price down',d=>d.vol&&d.vol.chg<0]};
+function chips(){$('ch').innerHTML=Object.entries(FIL).map(([k,[t,f]])=>`<button class="chip ${F===k?'on':''}" data-k="${k}">${t} (${D.filter(f).length})</button>`).join('')}
+$('ch').onclick=e=>{const k=e.target.dataset.k;if(k){F=k;r()}};
+function vb(v){if(!v)return '<span class="mu">No volume data</span>';
+ const x=v.ratio;let t,c,col;
+ if(x>=1.5){t='🔥 High';c='hi';col='var(--am)'}else if(x>=1.1){t='↑ Above avg';c='up';col='var(--ac)'}else if(x>=0.8){t='→ Normal';c='mu';col='var(--mu)'}else{t='↓ Below avg';c='dn';col='var(--rd)'}
+ return `<div class="vb"><div class="t"><b class="${c}">${t}</b><span>${x}x</span></div><div class="bar"><i style="width:${Math.min(100,x/2*100)}%;background:${col}"></i></div></div>`}
+function r(){chips();const k=$('q').value.toLowerCase(),m=$('o').value;
+ let a=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k)&&FIL[F][1](d));
  const key={score:d=>d.score,vol:d=>d.vol?d.vol.ratio:-1,chg:d=>d.vol?d.vol.chg:-99}[m];
- a.sort((x,y)=>key(y)-key(x));
- g.innerHTML=a.map(d=>`<div class="c"><div class="s">${esc(d.symbol)}</div><div class="n">${esc(d.name)}</div><div class="m"><i style="width:${d.score}%"></i></div>${vol(d.vol)}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div>`).join('')||'<p class="n">No stocks.</p>'}
-q.oninput=r;o.oninput=r;
+ a.sort(m==='az'?(x,y)=>x.symbol.localeCompare(y.symbol):(x,y)=>key(y)-key(x));
+ $('L').innerHTML=a.map(d=>{const v=d.vol,p=v?`<span class="pc ${v.chg>=0?'up':'dn'}">${v.chg>=0?'+':''}${v.chg}%</span><div class="nm">₹${v.price}</div>`:'<span class="mu">-</span>';
+ return `<div class="item"><div class="row"><div><div class="sym">${esc(d.symbol)}</div><div class="nm">${esc(d.name)}</div></div><div>${p}</div>${vb(v)}<div class="sc">${d.score}</div></div><div class="det">${v?`<div class="meta">Volume ${v.vol.toLocaleString('en-IN')} vs avg ${v.avg.toLocaleString('en-IN')} · as of ${esc(v.asof)}</div>`:''}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div></div>`}).join('')||'<div class="empty">No stocks match.</div>'}
+$('L').onclick=e=>{const r=e.target.closest('.row');if(r)r.parentNode.classList.toggle('open')};
+$('q').oninput=r;$('o').oninput=r;
 fetch('data.json?'+Date.now()).then(x=>x.json()).then(j=>{D=j.stocks;
-const t=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
-b.textContent=(j.date===t?'✅ Updated today: ':'⚠️ Last updated: ')+j.updated+' · '+D.length+' stocks';r()}).catch(()=>b.textContent='data.json not found. Run the workflow once.');
+ const t=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
+ $('up').textContent=(j.date===t?'✅ Updated today: ':'⚠️ Last updated: ')+j.updated;
+ $('s1').textContent=j.scanned||'-';$('s2').textContent=D.length;
+ $('s3').textContent=D.filter(FIL.hv[1]).length;$('s4').textContent=D.filter(FIL.up[1]).length;r()}).catch(()=>$('up').textContent='data.json not found. Run the workflow once.');
 </script></body></html>
