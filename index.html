@@ -3,63 +3,86 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>F&O Positive News Scanner</title>
 <style>
-:root{--bg:#f4f6f8;--cd:#fff;--tx:#12161c;--mu:#5d6876;--bd:#e1e5ea;--ac:#0a7d4f;--acb:#e0f3ea;--rd:#c0392b;--rdb:#fbe5e2;--am:#9a5b00;--amb:#fdefd3}
-@media(prefers-color-scheme:dark){:root{--bg:#0e1217;--cd:#161c24;--tx:#e8ecf1;--mu:#98a3b1;--bd:#262f3a;--ac:#4fd39a;--acb:#10302a;--rd:#ff7b6b;--rdb:#3a1b18;--am:#f0b45a;--amb:#35290f}}
+:root{--bg:#f1f3fb;--cd:#fff;--tx:#141a2e;--mu:#62708a;--bd:#e0e5f2;--g:#12b76a;--gb:#dcfae6;--r:#f04438;--rb:#fee4e2;--a:#f79009;--ab:#fef0c7;--b:#2e90fa;--bb:#d1e9ff;--p:#7a5af8;--pb:#ebe9fe}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--cd:#141b30;--tx:#e9edf8;--mu:#93a0bd;--bd:#25304d;--gb:#0f3a2a;--rb:#43191a;--ab:#3d2c0c;--bb:#10304f;--pb:#2a2160}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1000px;margin:auto;padding:16px 14px 50px}
-h1{font-size:21px;margin:4px 0 2px}.sub{color:var(--mu);font-size:13px;margin:0 0 12px}
-.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px}
-.stat div{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:9px 12px}
-.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--mu)}
-.tools{position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-input,select{padding:9px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit}
+.hero{background:linear-gradient(120deg,#5b3df5,#2e90fa 55%,#12b76a);color:#fff;padding:22px 16px 60px}
+.wrap{max-width:1040px;margin:auto}
+.hero h1{margin:0;font-size:24px}.hero p{margin:4px 0 0;opacity:.92;font-size:13px}
+main{max-width:1040px;margin:-42px auto 0;padding:0 14px 50px}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.stat div{border-radius:14px;padding:12px 14px;color:#fff;box-shadow:0 6px 18px rgba(30,40,90,.18)}
+.stat b{display:block;font-size:26px;line-height:1.1}.stat span{font-size:12px;opacity:.95}
+.s1{background:linear-gradient(135deg,#5b3df5,#7a5af8)}.s2{background:linear-gradient(135deg,#0e9f6e,#12b76a)}
+.s3{background:linear-gradient(135deg,#f79009,#fb6514)}.s4{background:linear-gradient(135deg,#2e90fa,#06aed4)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+input,select{padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--cd);color:var(--tx);font:inherit}
 input{flex:1;min-width:140px}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 10px}
-.chip{padding:6px 12px;border:1px solid var(--bd);border-radius:99px;background:var(--cd);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
-.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
-.list{background:var(--cd);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
-.hd,.row{display:grid;grid-template-columns:minmax(110px,1.3fr) 80px minmax(130px,1.4fr) 50px;gap:10px;align-items:center;padding:10px 14px}
-.hd{font-size:12px;color:var(--mu);background:var(--bg);border-bottom:1px solid var(--bd)}
-.item{border-bottom:1px solid var(--bd)}.item:last-child{border:0}
-.row{cursor:pointer}.row:hover{background:var(--bg)}
-.sym{font-weight:700}.nm{font-size:12px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pc{font-weight:600}.up{color:var(--ac)}.dn{color:var(--rd)}.hi{color:var(--am)}.mu{color:var(--mu)}
-.vb{display:flex;flex-direction:column;gap:3px;font-size:12px}
-.vb .t{display:flex;justify-content:space-between}
-.bar{height:5px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%}
-.sc{font-size:12px;text-align:center;border-radius:6px;padding:2px 0;background:var(--acb);color:var(--ac);font-weight:600}
-.det{display:none;padding:2px 14px 12px;background:var(--bg)}.item.open .det{display:block}
-.det a{display:block;text-decoration:none;color:var(--tx);font-size:13px;padding:7px 0;border-top:1px solid var(--bd)}.det a:hover{color:var(--ac)}
-.det small{color:var(--mu)}.meta{font-size:12px;color:var(--mu);padding:8px 0 4px}
-.empty{padding:24px;text-align:center;color:var(--mu)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.chip{padding:7px 13px;border:1px solid var(--bd);border-radius:99px;background:var(--cd);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
+.chip.on{color:#fff;border-color:transparent;background:linear-gradient(120deg,#5b3df5,#2e90fa)}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{background:var(--cd);border:1px solid var(--bd);border-left:5px solid var(--bc,var(--bd));border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(30,40,90,.06)}
+.row{display:grid;grid-template-columns:minmax(120px,1.2fr) 150px minmax(120px,1fr) minmax(130px,1.2fr) 46px;gap:12px;align-items:center;padding:12px 14px;cursor:pointer}
+.row:hover{background:linear-gradient(90deg,var(--bg),transparent)}
+.sym{font-weight:800;font-size:16px}.nm{font-size:12px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc{font-weight:700;font-size:15px}.up{color:var(--g)}.dn{color:var(--r)}.mu{color:var(--mu)}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:700}
+.pg{background:var(--gb);color:var(--g)}.pa{background:var(--ab);color:var(--a)}.pb{background:var(--bb);color:var(--b)}.pr{background:var(--rb);color:var(--r)}
+.vb{display:flex;flex-direction:column;gap:5px}.vb .t{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.bar{height:7px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;border-radius:9px}
+.sc{height:38px;width:38px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;background:conic-gradient(var(--p) calc(var(--v)*1%),var(--bd) 0);position:relative}
+.sc span{position:absolute;inset:4px;border-radius:50%;background:var(--cd);color:var(--p);display:grid;place-items:center}
+svg.sp{width:100%;height:42px;display:block}
+.ln{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:flow 1.4s ease-out forwards}
+@keyframes flow{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.ln{animation:none;stroke-dashoffset:0}}
+.det{display:none;padding:4px 14px 14px;background:var(--bg);border-top:1px dashed var(--bd)}.item.open .det{display:block}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.cb{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:10px}
+.cb h4{margin:0 0 4px;font-size:12px;color:var(--mu);font-weight:600}
+.cb svg{width:100%;height:130px;display:block}
+.det a{display:block;text-decoration:none;color:var(--tx);font-size:13px;padding:8px 10px;margin-top:6px;background:var(--cd);border:1px solid var(--bd);border-left:3px solid var(--g);border-radius:8px}.det a:hover{border-left-color:var(--p)}
+.meta{font-size:12px;color:var(--mu)}
+.empty{padding:28px;text-align:center;color:var(--mu);background:var(--cd);border-radius:14px}
 .d{font-size:12px;color:var(--mu);margin-top:18px}
-@media(max-width:560px){.hd{display:none}.row{grid-template-columns:1fr auto;grid-template-areas:"a c""b b"}.row>:nth-child(1){grid-area:a}.row>:nth-child(2){grid-area:c;text-align:right}.row>:nth-child(3){grid-area:b}.row>:nth-child(4){display:none}}
-</style></head><body><main>
-<h1>📈 F&amp;O stocks with positive news</h1>
-<p class="sub" id="up">Loading…</p>
-<div class="stat"><div><b id="s1">-</b><span>Stocks scanned</span></div><div><b id="s2">-</b><span>With positive news</span></div><div><b id="s3">-</b><span>High volume (1.5x+)</span></div><div><b id="s4">-</b><span>Price up</span></div></div>
+@media(max-width:640px){.row{grid-template-columns:1fr auto;grid-template-areas:"a b""c c""d d"}.row>:nth-child(1){grid-area:a}.row>:nth-child(2){grid-area:c}.row>:nth-child(3){grid-area:b;text-align:right}.row>:nth-child(4){grid-area:d}.row>:nth-child(5){display:none}}
+</style></head><body>
+<div class="hero"><div class="wrap"><h1>📈 F&amp;O stocks with positive news</h1><p id="up">Loading…</p></div></div>
+<main>
+<div class="stat"><div class="s1"><b id="s1">-</b><span>Stocks scanned</span></div><div class="s2"><b id="s2">-</b><span>With positive news</span></div><div class="s3"><b id="s3">-</b><span>High volume (1.5x+)</span></div><div class="s4"><b id="s4">-</b><span>Price up</span></div></div>
 <div class="tools"><input id="q" placeholder="Search stock…">
 <select id="o"><option value="score">Sort: News score</option><option value="vol">Sort: Volume ratio</option><option value="chg">Sort: Price change</option><option value="az">Sort: A to Z</option></select></div>
 <div class="chips" id="ch"></div>
-<div class="list"><div class="hd"><span>Stock</span><span>Price</span><span>Volume vs 20-day avg</span><span>News</span></div><div id="L"></div></div>
-<p class="d">Volume is the last trading day's volume against the previous 20-day average (Yahoo Finance, end of day, not live). Click a row to read the news. News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
+<div class="list" id="L"></div>
+<p class="d">Charts show the last ~30 trading days (Yahoo Finance, end of day, not live). Volume is the last day against the previous 20-day average. Click a stock to open charts and news. News is matched by keywords, so it can be wrong. Not investment advice. Positive news may already be priced in. F&amp;O is high risk; consult a SEBI-registered advisor.</p>
 </main><script>
-let D=[],F='all';const $=i=>document.getElementById(i);
+let D=[],F='all',N=0;const $=i=>document.getElementById(i);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const FIL={all:['All',()=>true],hv:['🔥 High volume',d=>d.vol&&d.vol.ratio>=1.5],ab:['↑ Above avg volume',d=>d.vol&&d.vol.ratio>=1.1],up:['Price up',d=>d.vol&&d.vol.chg>0],dn:['Price down',d=>d.vol&&d.vol.chg<0]};
+const FIL={all:['All',()=>true],hv:['🔥 High volume',d=>d.vol&&d.vol.ratio>=1.5],ab:['↑ Above avg volume',d=>d.vol&&d.vol.ratio>=1.1],up:['▲ Price up',d=>d.vol&&d.vol.chg>0],dn:['▼ Price down',d=>d.vol&&d.vol.chg<0]};
 function chips(){$('ch').innerHTML=Object.entries(FIL).map(([k,[t,f]])=>`<button class="chip ${F===k?'on':''}" data-k="${k}">${t} (${D.filter(f).length})</button>`).join('')}
 $('ch').onclick=e=>{const k=e.target.dataset.k;if(k){F=k;r()}};
-function vb(v){if(!v)return '<span class="mu">No volume data</span>';
- const x=v.ratio;let t,c,col;
- if(x>=1.5){t='🔥 High';c='hi';col='var(--am)'}else if(x>=1.1){t='↑ Above avg';c='up';col='var(--ac)'}else if(x>=0.8){t='→ Normal';c='mu';col='var(--mu)'}else{t='↓ Below avg';c='dn';col='var(--rd)'}
- return `<div class="vb"><div class="t"><b class="${c}">${t}</b><span>${x}x</span></div><div class="bar"><i style="width:${Math.min(100,x/2*100)}%;background:${col}"></i></div></div>`}
-function r(){chips();const k=$('q').value.toLowerCase(),m=$('o').value;
+function vinfo(x){return x>=1.5?['🔥 High','pa','var(--a)']:x>=1.1?['↑ Above avg','pg','var(--g)']:x>=0.8?['→ Normal','pb','var(--b)']:['↓ Below avg','pr','var(--r)']}
+function pts(a,w,h,pad){const mn=Math.min(...a),mx=Math.max(...a),rg=(mx-mn)||1;return a.map((v,i)=>[pad+i*(w-2*pad)/(a.length-1),pad+(h-2*pad)*(1-(v-mn)/rg)])}
+function path(p){return p.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ')}
+function spark(c,w,h){if(!c||c.length<3)return '';N++;const up=c[c.length-1]>=c[0],col=up?'var(--g)':'var(--r)',p=pts(c,w,h,3),d=path(p),id='g'+N;
+return `<svg class="sp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".35"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><path d="${d} L${w-3} ${h} L3 ${h}Z" fill="url(#${id})"/><path class="ln" style="--len:400" pathLength="400" d="${d}" stroke="${col}"/></svg>`}
+function big(c){if(!c||c.length<3)return '';N++;const w=300,h=130,up=c[c.length-1]>=c[0],col=up?'var(--g)':'var(--r)',p=pts(c,w,h,10),d=path(p),id='g'+N,mn=Math.min(...c),mx=Math.max(...c);
+return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".4"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><path d="${d} L${w-10} ${h} L10 ${h}Z" fill="url(#${id})"/><path class="ln" style="--len:400" pathLength="400" d="${d}" stroke="${col}"/><circle cx="${p[p.length-1][0]}" cy="${p[p.length-1][1]}" r="4" fill="${col}"/><text x="12" y="12" font-size="10" fill="var(--mu)">High ${mx}</text><text x="12" y="${h-3}" font-size="10" fill="var(--mu)">Low ${mn}</text></svg>`}
+function vbars(v,c,avg){if(!v||v.length<3)return '';const w=300,h=130,mx=Math.max(...v,avg),bw=(w-20)/v.length;
+const bars=v.map((x,i)=>{const bh=(h-20)*x/mx,up=i===0||c[i]>=c[i-1];return `<rect x="${10+i*bw+1}" y="${h-bh}" width="${bw-2}" height="${bh}" rx="2" fill="${up?'var(--g)':'var(--r)'}" opacity=".85"/>`}).join('');
+const ay=h-(h-20)*avg/mx;return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${bars}<line x1="10" x2="${w-10}" y1="${ay}" y2="${ay}" stroke="var(--p)" stroke-width="1.5" stroke-dasharray="4 3"/><text x="12" y="12" font-size="10" fill="var(--p)">- - 20-day avg</text></svg>`}
+function r(){chips();N=0;const k=$('q').value.toLowerCase(),m=$('o').value;
  let a=D.filter(d=>(d.symbol+d.name).toLowerCase().includes(k)&&FIL[F][1](d));
  const key={score:d=>d.score,vol:d=>d.vol?d.vol.ratio:-1,chg:d=>d.vol?d.vol.chg:-99}[m];
  a.sort(m==='az'?(x,y)=>x.symbol.localeCompare(y.symbol):(x,y)=>key(y)-key(x));
- $('L').innerHTML=a.map(d=>{const v=d.vol,p=v?`<span class="pc ${v.chg>=0?'up':'dn'}">${v.chg>=0?'+':''}${v.chg}%</span><div class="nm">₹${v.price}</div>`:'<span class="mu">-</span>';
- return `<div class="item"><div class="row"><div><div class="sym">${esc(d.symbol)}</div><div class="nm">${esc(d.name)}</div></div><div>${p}</div>${vb(v)}<div class="sc">${d.score}</div></div><div class="det">${v?`<div class="meta">Volume ${v.vol.toLocaleString('en-IN')} vs avg ${v.avg.toLocaleString('en-IN')} · as of ${esc(v.asof)}</div>`:''}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div></div>`}).join('')||'<div class="empty">No stocks match.</div>'}
-$('L').onclick=e=>{const r=e.target.closest('.row');if(r)r.parentNode.classList.toggle('open')};
+ $('L').innerHTML=a.map(d=>{const v=d.vol;let bc='var(--bd)',price='<span class="mu">-</span>',vol='<span class="mu">No volume data</span>',det='';
+ if(v){const [t,cls,col]=vinfo(v.ratio);bc=col;
+  price=`<span class="pc ${v.chg>=0?'up':'dn'}">${v.chg>=0?'▲ +':'▼ '}${v.chg}%</span> <span class="nm">₹${v.price}</span>`;
+  vol=`<div class="vb"><div class="t"><span class="pill ${cls}">${t}</span><b>${v.ratio}x</b></div><div class="bar"><i style="width:${Math.min(100,v.ratio/2*100)}%;background:${col}"></i></div></div>`;
+  det=`<div class="charts"><div class="cb"><h4>Price, last ${v.closes?v.closes.length:0} days</h4>${big(v.closes)}</div><div class="cb"><h4>Volume (green = up day, red = down day)</h4>${vbars(v.vols,v.closes,v.avg)}</div></div><div class="meta">Volume ${v.vol.toLocaleString('en-IN')} vs avg ${v.avg.toLocaleString('en-IN')} · as of ${esc(v.asof)}</div>`}
+ return `<div class="item" style="--bc:${bc}"><div class="row"><div><div class="sym">${esc(d.symbol)}</div><div class="nm">${esc(d.name)}</div></div><div>${v?spark(v.closes,140,42):''}</div><div>${price}</div>${vol}<div class="sc" style="--v:${d.score}"><span>${d.score}</span></div></div><div class="det">${det}${d.news.map(n=>`<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>`).join('')}</div></div>`}).join('')||'<div class="empty">No stocks match.</div>'}
+$('L').onclick=e=>{if(e.target.closest('a'))return;const r=e.target.closest('.row');if(r)r.parentNode.classList.toggle('open')};
 $('q').oninput=r;$('o').oninput=r;
 fetch('data.json?'+Date.now()).then(x=>x.json()).then(j=>{D=j.stocks;
  const t=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
