@@ -1,4 +1,4 @@
-"""Daily fetch: Google News (positive headlines) + Yahoo volume -> data.json. No API key needed."""
+"""Daily scan of all F&O stocks: Yahoo volume/price momentum + Google News positive headlines -> data.json."""
 import json, re, time, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 
@@ -76,7 +76,7 @@ def score(title):
     return sum(k in t for k in POS) - sum(k in t for k in NEG)
 
 def volume(sym):
-    """Last trading day's volume vs previous 20-day average (Yahoo Finance, end of day)."""
+    """Last trading day's volume vs previous 20-day average + momentum numbers (Yahoo Finance, end of day)."""
     try:
         tk = YAHOO.get(sym, urllib.parse.quote(sym, safe="-") + ".NS")
         j = json.loads(get(f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}?range=2mo&interval=1d"))
@@ -88,30 +88,48 @@ def volume(sym):
         last = rows[-1]
         prev = [v for _, _, v in rows[-21:-1]]
         avg = sum(prev) / len(prev)
+        closes = [c for _, c, _ in rows]
+        chg = (last[1] / rows[-2][1] - 1) * 100
+        ret5 = (last[1] / closes[-6] - 1) * 100
+        brk = last[1] >= max(closes[-21:-1]) * 0.99       # at/near 20-day high
+        ratio = last[2] / avg
+        mom = ratio * 25 if ratio < 2 else 50
+        mom += max(0, min(20, chg * 6)) + max(0, min(15, ret5 * 2.5)) + (15 if brk else 0)
         d = datetime.fromtimestamp(last[0], timezone(timedelta(hours=5, minutes=30))).strftime("%d %b")
-        return {"ratio": round(last[2] / avg, 2), "vol": int(last[2]), "avg": int(avg),
-                "price": round(last[1], 2), "chg": round((last[1] / rows[-2][1] - 1) * 100, 2), "asof": d}
+        return {"ratio": round(ratio, 2), "vol": int(last[2]), "avg": int(avg), "price": round(last[1], 2),
+                "chg": round(chg, 2), "ret5": round(ret5, 2), "brk": bool(brk), "mom": int(min(100, mom)), "asof": d,
+                "closes": [round(c, 2) for c in closes[-30:]], "vols": [int(v) for _, _, v in rows[-30:]]}
     except Exception as e:
         print("no volume", sym, e)
         return None
 
-results = []
-for sym, name in STOCKS.items():
+def news_for(sym, name):
     try:
         hs = headlines(sym, name)
     except Exception as e:
-        print("skip", sym, e); continue
+        print("no news", sym, e)
+        return 0, []
     scored = [(score(h["title"]), h) for h in hs]
     pos = [h for s, h in scored if s > 0]
     net = sum(s for s, _ in scored)
-    if pos and net > 0:
-        results.append({"symbol": sym, "name": name, "score": min(100, 50 + net * 10),
-                        "news": pos[:4], "vol": volume(sym)})
-        time.sleep(0.5)
-    time.sleep(0.7)
+    return (min(100, 50 + net * 10), pos[:4]) if pos and net > 0 else (0, [])
 
-results.sort(key=lambda r: -r["score"])
+results = []
+for sym, name in STOCKS.items():
+    v = volume(sym)
+    time.sleep(0.4)
+    ns, news = news_for(sym, name)
+    time.sleep(0.6)
+    if not v and not news:
+        continue
+    # keep chart series only where useful (keeps data.json small)
+    if v and not (news or v["ratio"] >= 1.2):
+        v["closes"] = v["vols"] = []
+    results.append({"symbol": sym, "name": name, "score": ns, "news": news, "vol": v})
+
+results.sort(key=lambda r: -(r["vol"]["mom"] if r["vol"] else 0))
 ist = datetime.now(timezone(timedelta(hours=5, minutes=30)))
 json.dump({"updated": ist.strftime("%Y-%m-%d %H:%M IST"), "date": ist.strftime("%Y-%m-%d"),
            "scanned": len(STOCKS), "stocks": results}, open("data.json", "w"), indent=1, ensure_ascii=False)
-print(len(results), "of", len(STOCKS), "stocks have positive news")
+mo = [r for r in results if r["vol"] and r["vol"]["ratio"] >= 1.5 and r["vol"]["chg"] > 0]
+print(len(results), "stocks;", len(mo), "high-volume gainers;", sum(1 for r in mo if r["news"]), "of them with news")
