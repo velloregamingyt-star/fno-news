@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21 17:41 IST",
+ "updated": "2026-11-21 17:55 IST",
  "date": "2026-11-21",
  "stocks": [
   {
@@ -13,26 +13,34 @@
      "source": "Univest",
      "date": "Sat, 21 Nov 2026 02:44:27 GMT"
     }
-   ]
+   ],
+   "vol": {
+    "ratio": 0.63,
+    "vol": 6072935,
+    "avg": 9625920,
+    "chg": -0.31,
+    "asof": "20 Nov"
+   }
   },
   {
-   "symbol": "EICHERMOT",
-   "name": "Eicher Motors",
+   "symbol": "INFY",
+   "name": "Infosys",
    "score": 60,
    "news": [
     {
-     "title": "Sensex jumps 990 points to cross 83,000, Nifty reclaims 25,500 as auto stocks power rally - DD India",
-     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPanJCeTdPVDFXZTB3VEYtcUtpbVJtazVWWmZHTnVPelI1dXh1SlVZWTVOMVV2SUpXV2RiMEp1QllwRnhLT2VMSmFEY2l4aWRkY3J5LUNmQXd0Z2pKZGw5aGN1X1dDYTVhd2FOSmNlb3BMUF9WZVdqYjdpODVKSVFzc21pQTRJOHpoY2NUeDU1ZXo0WS0tZXJ5ZDJtZlAzdTdqR0RPVWFFRm1hR1plTWxFcm5DSFRacEZ4?oc=5",
-     "source": "DD India",
-     "date": "Fri, 20 Nov 2026 17:08:58 GMT"
-    },
-    {
-     "title": "JWL Secures Repeat Order Worth ₹128.61 Crore from JSW (South) Rail Logistics - Machine Maker",
-     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSGdtYzVPckVSamdIeUhWY0NBbF9ScWIybi1mRjFMazZuNzdWQTl1ckFuMjhHRFY2b3FrZ01RdVBOSmJ3Vk41NnlDNDdLRUFLdW5BSUJNdkhqd3A1dHJuYnhfc2d5akpNREwzQ2ZVWnA1bFhlVDJXWlMtUTJmNy1uVjZUeFBvTjV2QjVDcE13TGF4ZUoyNnBXZHVfUVgwMC1GbFhsMFBKa2QybmthYk1oVXQ3bEk5clU?oc=5",
-     "source": "Machine Maker",
-     "date": "Sat, 21 Nov 2026 06:57:04 GMT"
+     "title": "Infosys ADR Gains 4% Despite Weak Wall Street Trade - Multibagg AI",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV1YwUkM4SmdzRkVxbk1KbFpzdlJOaG83cHdWdkdXYmtneTRYelhKeHA0UjhxSmphNno5Z2cxU0dYcjlOamNKeHZKaVdyNVdUUGpDQjA4QTQzb2FZWmZzcExScmFNVmt0UzlPdXBQY2NGazFOUExhV3Z0UWNmeW1WUDQtMk9JaDJtbXNod09xLUJzXzJBa0htR3ZSUm53bzVNSWZ3?oc=5",
+     "source": "Multibagg AI",
+     "date": "Fri, 20 Nov 2026 15:00:44 GMT"
     }
-   ]
+   ],
+   "vol": {
+    "ratio": 1.06,
+    "vol": 13749744,
+    "avg": 12953353,
+    "chg": 0.56,
+    "asof": "20 Nov"
+   }
   }
  ]
 }
