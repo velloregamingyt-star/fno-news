@@ -1,6 +1,7 @@
 {
- "updated": "2026-11-21 17:55 IST",
+ "updated": "2026-11-21 18:04 IST",
  "date": "2026-11-21",
+ "scanned": 199,
  "stocks": [
   {
    "symbol": "BHEL",
@@ -18,7 +19,71 @@
     "ratio": 0.63,
     "vol": 6072935,
     "avg": 9625920,
+    "price": 433.65,
     "chg": -0.31,
+    "asof": "20 Nov"
+   }
+  },
+  {
+   "symbol": "MANAPPURAM",
+   "name": "Manappuram Finance",
+   "score": 70,
+   "news": [
+    {
+     "title": "Manappuram Finance Q2FY27 results: Net profit up 223% YoY to ₹701 crore - scanx.trade",
+     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNEIzUGVvOVhMOVZzM0JqRnZkbUhEeGtxLV9hRHNkemtBVjBlTlBXYTE4Y0hGUkRWU1ZPSkRDVzRobzl0aFk1UElVU3BaY09zUnJ3MVZ4d3hsUFo5eGV3ajJEbDhrY2pObDA2RFVScmduLUt0NXNqVEZXV29BbTBHLS1NTlB3OHljUGd0OTdqc2RVNVlZRzhiak95UDB4WUM5eG1IaV9TWjVaMk14NXU5NGRLRmZoakExa3FDVmNraw?oc=5",
+     "source": "scanx.trade",
+     "date": "Sat, 21 Nov 2026 12:08:01 GMT"
+    }
+   ],
+   "vol": {
+    "ratio": 1.47,
+    "vol": 9973551,
+    "avg": 6801248,
+    "price": 280.5,
+    "chg": -0.83,
+    "asof": "20 Nov"
+   }
+  },
+  {
+   "symbol": "BAJAJ-AUTO",
+   "name": "Bajaj Auto",
+   "score": 60,
+   "news": [
+    {
+     "title": "Bajaj Auto upgrades Pulsar RS200 with ride modes, traction control, 5-inch TFT display - ET Auto",
+     "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPSDE1b0RoT0Y4QlptUzNJbDF4aW5fQi1DR0VUWFZueXdUQVo0Q3BGZ3RHal9Ed29RcHc2VWl0OHFFUGNkaWFBMnVYX0QyWDF4a09wb1V2LUZFMlVlT2xaVkFwUjZjaDB1VDd6bTVPVXNmQXFELVdsWkNUcG1CS29VcXk5cnVRcWczZnlYRkEzMEYxZUdYaWQxRkJhbjF6WjlFV19sNVhBdC11VGlGUjdJOHZFZ3RVS2JJTWN1VkJhTWtUT0pUV1Z2ZVA0anQxSjRKU2xoR25QaGNtTmRLTmdXLUdRS1M2ZjRkRzhsZWpR0gHuAUFVX3lxTE9IMTVvRGhPRjhCWm1TM0lsMXhpbl9CLUNHRVRYVm55d1RBWjRDcEZndEdqX0R3b1FwdzZVaXQ4cUVQY2RpYUEydVhfRDJYMXhrT3BvVXYtRkUyVWVPbFpWQXBSNmNoMHVUN3ptNU9Vc2ZBcUQtV2xaQ1RwbUJLb1VxeTlydVFxZzNmeVhGQTMwRjFlR1hpZDFGQmFuMXpaOUVXX2w1WEF0LXVUaUZSN0k4dkVndFVLYklNY3VWQmFNa1RPSlRXVnZlUDRqdDFKNEpTbGhHblBoY21OZEtOZ1ctR1FLUzZmNGRHOGxlalE?oc=5",
+     "source": "ET Auto",
+     "date": "Fri, 20 Nov 2026 14:12:14 GMT"
+    }
+   ],
+   "vol": {
+    "ratio": 1.58,
+    "vol": 593777,
+    "avg": 376514,
+    "price": 10765.0,
+    "chg": -0.48,
+    "asof": "20 Nov"
+   }
+  },
+  {
+   "symbol": "COLPAL",
+   "name": "Colgate-Palmolive",
+   "score": 60,
+   "news": [
+    {
+     "title": "Crude Oil Supply Concerns Weigh on Markets as Colgate-Palmolive (CL) Shows Dividend Resilience - GuruFocus",
+     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRE85SUZzLTVBRnBhNDAteFY5b1Vzem5CRkhjVVpkWHZWLXljNzZvMGdPbGJBaHY3a3ZpcHhEaFlUMjlwUC1sSkFYOS1sb0FIRlhWQUlpbmt3eHVvYUQyaExsMnh3NG95OUxwaElUaWZmZ2tzMnZwbG5panRzVjJMNmtpREp0SjFZLTVXUWs2elhyVVo3SjRGLWkxbnM0UnNwNHhfSEJ3WHR1YnpOcUFCV3JpYjJsQ2FVVF85TnJFVHJVRXVoaTNDd19n?oc=5",
+     "source": "GuruFocus",
+     "date": "Sat, 21 Nov 2026 01:05:59 GMT"
+    }
+   ],
+   "vol": {
+    "ratio": 0.73,
+    "vol": 351315,
+    "avg": 484104,
+    "price": 1760.0,
+    "chg": -0.93,
     "asof": "20 Nov"
    }
   },
@@ -38,7 +103,29 @@
     "ratio": 1.06,
     "vol": 13749744,
     "avg": 12953353,
+    "price": 1098.0,
     "chg": 0.56,
+    "asof": "20 Nov"
+   }
+  },
+  {
+   "symbol": "NHPC",
+   "name": "NHPC",
+   "score": 60,
+   "news": [
+    {
+     "title": "NHPC Jalpower Amalgamation Scheme Gets MCA Approval - Kalkine India",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN1otUENSd1ppNWNOU0tjcU1uUVY0X1o1WUtjZHdnY2tSQTMwVExNeFVfRnF4MjdEUDROUllnR0p4ZXBUMS1NbFBYanNHVDZHR2hOZ2NTVTdjcEZ5bUpoa3VIeXphZ0h4QmhPNmdndm9wUy1zYkZPeXpRMWE5S19wWndaRkl2YTF1ZGZFUWxBRkc0NUJIUkdKaDFtV01TdzlwbHhJZE54ZFhrRDlqRTlVWExB?oc=5",
+     "source": "Kalkine India",
+     "date": "Fri, 20 Nov 2026 12:57:00 GMT"
+    }
+   ],
+   "vol": {
+    "ratio": 0.54,
+    "vol": 7800188,
+    "avg": 14398532,
+    "price": 76.61,
+    "chg": 0.41,
     "asof": "20 Nov"
    }
   }
